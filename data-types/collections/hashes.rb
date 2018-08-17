@@ -5,13 +5,13 @@ class HashesTest < Minitest::Test
 
   def test_1
     # In the line below, create a new empty hash called empty
-    empty = ______
+    empty = {}
     assert_equal ({}), empty
   end
 
   def test_2
     # In the line below, create an empty hash with a default value 0
-    empty = ______
+    empty = Hash.new(0)
     assert_equal 0, empty[:not_found]
   end
 
@@ -19,7 +19,7 @@ class HashesTest < Minitest::Test
     # In the line below, create a hash called ages. The hash should
     # have a key of "ben" with a value of 4 and a key of "kelly" with
     # a value of 6
-    ages = ______
+    ages = {"ben" => 4, "kelly" => 6}
     assert_equal 2, ages.length
     assert_equal 4, ages["ben"]
     assert_equal 6, ages["kelly"]
@@ -29,7 +29,7 @@ class HashesTest < Minitest::Test
     # In the line below, create a hash called ages. The hash should
     # have a key of :ben with a value of 4 and a key of :kelly with
     # a value of 6.
-    ages = ______
+    ages = {:ben => 4, :kelly => 6}
     assert_equal 2, ages.length
     assert_equal 4, ages[:ben]
     assert_equal 6, ages[:kelly]
