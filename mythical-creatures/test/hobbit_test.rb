@@ -10,19 +10,17 @@ class HobbitTest < Minitest::Test
   end
 
   def test_it_is_named_something_else
-    skip
+
     hobbit = Hobbit.new("Peregrin")
     assert_equal "Peregrin", hobbit.name
   end
 
   def test_disposition_is_unadventurous
-    skip
     hobbit = Hobbit.new("Samwise")
     assert_equal "homebody", hobbit.disposition
   end
 
   def test_can_have_a_different_disposition
-    skip
     hobbit = Hobbit.new("Frodo", "adventurous")
     assert_equal "adventurous", hobbit.disposition
   end
@@ -81,4 +79,3 @@ class HobbitTest < Minitest::Test
   end
 
 end
-
