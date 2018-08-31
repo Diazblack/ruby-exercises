@@ -75,8 +75,6 @@ class HobbitTest < Minitest::Test
   end
 
   def test_hobbits_are_short
-    # create a hobbit
-    # check that .is_short? returns true
     frodo = Hobbit.new('Frodo')
     assert_equal true, frodo.is_short?
   end
