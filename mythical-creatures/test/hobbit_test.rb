@@ -2,6 +2,7 @@ gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/hobbit'
+require 'pry'
 
 class HobbitTest < Minitest::Test
   def test_it_has_a_name
@@ -26,7 +27,6 @@ class HobbitTest < Minitest::Test
   end
 
   def test_grows_older_when_celebrating_birthdays
-    skip
     hobbit = Hobbit.new('Meriadoc')
     assert_equal 0, hobbit.age
     5.times do
@@ -36,7 +36,6 @@ class HobbitTest < Minitest::Test
   end
 
   def test_is_considered_a_child_at_32
-    skip
     hobbit = Hobbit.new('Gerontius')
     32.times do
       hobbit.celebrate_birthday
@@ -45,7 +44,6 @@ class HobbitTest < Minitest::Test
   end
 
   def test_comes_of_age_at_33
-    skip
     hobbit = Hobbit.new('Otho')
     33.times do
       hobbit.celebrate_birthday
@@ -58,24 +56,29 @@ class HobbitTest < Minitest::Test
   end
 
   def test_is_old_at_age_of_101
-    skip
-    # create a hobbit
-    # have hobbit age 101 years
-    # check that hobbit.old? returns true
+      hobbit = Hobbit.new('Theo')
+      100.times do
+        hobbit.celebrate_birthday
+      end
+      assert_equal false, hobbit.old?
+
+      hobbit.celebrate_birthday
+      assert_equal true , hobbit.old?
   end
 
   def test_hobbit_has_the_ring_if_its_name_is_frodo
-    skip
-    # create a hobbit named Frodo
-    # create a second hobbit named Sam
-    # check that .has_ring? for Frodo returns true
-    # check that .has_ring? for Sam returns false
+    frodo = Hobbit.new('Frodo')
+    sam = Hobbit.new('Sam')
+
+    assert_equal true , frodo.has_ring?
+    assert_equal false , sam.has_ring?
   end
 
   def test_hobbits_are_short
-    skip
     # create a hobbit
     # check that .is_short? returns true
+    frodo = Hobbit.new('Frodo')
+    assert_equal true, frodo.is_short?
   end
 
 end
